@@ -1,0 +1,9 @@
+<!doctype html>
+
+<title>Hello from Flask</title>
+
+{% if songurl %}
+  <h1>Hello <a href={{ songurl }}>{{ songurl }}</a>!</h1>  
+{% else %}
+  <h1>it's fine</h1>
+{% endif %}
