@@ -2,6 +2,7 @@ import spotipy
 from spotipy.oauth2 import SpotifyOAuth
 import os
 import random
+import time
 
 #do try & except for people who may have copied the guthub code
 try:
@@ -39,7 +40,7 @@ def main():
     print(danceability)
     print(energy)
 
-    if valence <= 0.38 and danceability <= 0.6 and energy <= 0.35:   #designated values under which the song is "sad"
+    if valence <= 0.38 and danceability <= 0.77 and energy <= 0.47:   #designated values under which the song is "sad"
         playlist = sp.playlist("spotify:playlist:2cBPRlyEK7ZKl1FvnTtmsP")  #accessing a specific "Upbeat Positive Tunes" playlist on Spotify
         songs = playlist["tracks"]["items"]
 
@@ -49,7 +50,9 @@ def main():
     return ""
     
 if __name__ == "__main__":  #the code will only run what ever is in the main func only if we RUN this file specifically 
-    main()
+    while True:
+        print(main())
+        time.sleep(1)
 
 
 
